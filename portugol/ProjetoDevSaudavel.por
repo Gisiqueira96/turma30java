@@ -84,6 +84,10 @@ programa
 							escreva("Código : ",codProduto[contador],"\nProduto : ",produto[contador],"\nValor : ",preco[contador],"\nEstoque : ",estoque[contador])
 							escreva("\n\nDigite a quantidade desejada : ")
 							leia(auxQuant)
+							enquanto(auxQuant<=0){
+								escreva("Valor inválido, digite novamente: ")
+								leia(auxQuant)
+							}
 							se (auxQuant > estoque[contador]){
 								escreva ("Digite a quantidade mediante o estoque !")
 								escreva("\n\nDigite a quantidade desejada : ")
@@ -133,6 +137,11 @@ programa
 					leia(opcao)
 					limpa()
 					linhaNota(verdadeiro)
+					enquanto(opcao >3 ou opcao <=0){
+						escreva("Opção inválida, escolha novamente: ")
+						escreva("\n\nFormas de Pagamento : \nOpção [1] - Dinheiro á vista c/ 10% de desconto\nOpção [2] - Cartão á vista c/ 10% de acréscimo\nOpção [3] - Cartão em 2x c/ 15% de acréscimo\n\nDigite a opção de pagamento : ")
+						leia(opcao)
+					}
 					
 					se(opcao == 1){
 						para (contador = 0; contador < 10; contador++){
@@ -194,10 +203,9 @@ programa
 				}
 							
 			}
-			escreva("Deseja continuar com a compra [S/N]: ")
+			escreva("Deseja retornar para o site [S] / [N]: ")
 			leia(desejaVoltarParaSite)
 			limpa()	
-			insereBanner()
 			
 			
 	}enquanto(desejaVoltarParaSite == 's' ou desejaVoltarParaSite == 'S')
@@ -250,7 +258,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 9771; 
+ * @POSICAO-CURSOR = 10208; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
