@@ -2,6 +2,7 @@ programa
 {
 	inclua biblioteca Matematica --> mat
 	inclua biblioteca Calendario --> cal
+	inclua biblioteca Texto --> txt
 	funcao inicio()
 	{				
 		inicioPrograma()				
@@ -11,7 +12,7 @@ programa
 	{
 		
 			cadeia verificarRepeticao[10] = {"","","","","","","","","",""}
-			cadeia codProduto[10] 
+			cadeia codProduto[] = { "G3-1", "G3-2","G3-3","G3-4","G3-5","G3-6","G3-7","G3-8","G3-9","G3-10"}
 			cadeia produto[] = { "Glutamina", "Vitamina C", "Regata Cav", "Tenis Sports", "Whey Prot", "Snacks Div", "C. Legging", "Camiseta", "BCAA CAPS", "Corda P."}
 			real preco[] = { 30.00, 15.00, 45.00, 100.00, 75.00, 12.00, 80.00, 24.00, 42.00, 20.00 }
 			inteiro estoque[10] 
@@ -25,7 +26,7 @@ programa
 			inteiro opcao = 0
 			logico brasilia = falso
 			caracter desejaVoltarParaSite
-			cadeia zerarCarrinho 
+			cadeia zerarCarrinho
 
 			insereBanner() 
 			escreva("\nDeseja entrar no site [S/N] ?: ")
@@ -33,7 +34,6 @@ programa
 			limpa ()
 			
 			para(contador = 0 ; contador < 10 ; contador++){
-				codProduto[contador] = "G3-" + (contador + 1)
 				estoque[contador] = 10
 				
 			}
@@ -49,11 +49,11 @@ programa
 				faca{
 					escreva("\nSelecione o código do produto : ")
 					leia(auxCod)
+					auxCod = txt.caixa_alta(auxCod)
 					
 					para(contador = 0 ; contador < 10 ; contador++){
 						se(verificarRepeticao[contador] == auxCod){
 							escreva("\nVocê já selecionou esse produto, quer escolher outro [S/N] ?  \n")
-							escreva("Caso não queira escolher outro produto e modificar o produto já selecionado, para retirar do carrinho \ndigite - antes da quantidade desejada, caso seja apenas para adicionar digite somente a quantidade desejada.")
 							leia (continua)
 							limpa()
 							se (continua == 'S' ou continua == 's'){
@@ -215,7 +215,7 @@ programa
 		
 
 		funcao insereBanner() {
-		escreva("www.devsaudavel.com.br\n")
+		escreva("www.devsaudavel.com.br || versão 1.3\n")
 		escreva ("\t\t\t\t*****DEV SAUDÁVEL*****\n")
 		escreva ("\t\t\t\tProgramando a sua saúde\n")	
 		}	
@@ -258,7 +258,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10208; 
+ * @POSICAO-CURSOR = 10082; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
