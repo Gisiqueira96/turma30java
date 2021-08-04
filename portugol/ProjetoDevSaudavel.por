@@ -195,7 +195,8 @@ programa
 								}											
 				leia(zerarCarrinho)											
 				auxQuant=0					
-				contador=0					
+				contador=0
+				auxCod = " "				
 				para(inteiro x = 0; x < 10; x++){				
 					carrinhoCompras[x] = 0			
 					total = 0.0				
@@ -243,7 +244,7 @@ programa
 		funcao linhaNota(logico forte){
 			se(forte){
 				escreva("======================================= Nota Fiscal =========================================\n")
-				escreva("\nwww.devsaudavel.com.br\n")
+				escreva("\nwww.devsaudavel.com.br || versão 1.3\n")
 				escreva ("\t\t\t\t  *****DEV SAUDÁVEL*****\n")
 				escreva ("\t\t\t\t  Programando a sua saúde\n")
 				escreva ("\n\n♥    CÓDIGO\t♥\t PRODUTO\t♥    VALOR (R$)    ♥    QTDD    ♥     TOTAL (R$)    ♥\n")
@@ -258,7 +259,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10082; 
+ * @POSICAO-CURSOR = 0; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
