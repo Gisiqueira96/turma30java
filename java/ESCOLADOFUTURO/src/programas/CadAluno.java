@@ -38,18 +38,23 @@ public class CadAluno {
 		
 		
 		//mostrar tabela
-		System.out.println("MATRICULAS\t\tALUNOS\t\t\t\tSITUAÇÃO\t\t\tNOTA");
 		for (int x=0 ; x<alunes.length ; x++) {
-			
+			ativo[x] = true;
 			if (x >= 9) {
 				matriculas[x]="MAT-"+(x+1);
 			} 
-			else {
+			if (x < 9) {
 				matriculas[x]="MAT-0"+(x+1);
 			}
-			System.out.println(matriculas[x]+"\t\t"+alunes[x]+"\t\t\t\t"+ativo [x]+"\t\t\t"+nota[x]);
+			System.out.print("Matricula: "+matriculas[x]+" Alunes: "+alunes[x]+"\t\tNotas: "+nota[x]+" Status: ");
+			if (ativo[x] == true) {
+				System.out.print(" Ativo \n");
+			} 
+			if (ativo[x] == false){
+				System.out.print(" Inativo \n");
+			}
 		}
-		
+			
 		do {
 			//matricula do alune e imprima
 			System.out.println();
@@ -71,11 +76,11 @@ public class CadAluno {
 			System.out.print("Deseja continuar adicionando as notas S/N: ");
 			op = ler.next().toUpperCase().charAt(0);
 		}while (op == 'S');
-		
+		// notas atualizadas
 		System.out.println("---MOSTRAR NOTAS---");
 		for (int x=0 ; x<alunes.length ; x++) {
 			if (nota != null) {
-				System.out.println(matriculas[x]+"\t\t"+alunes[x]+"\t\t\t\t"+ativo [x]+"\t\t\t"+nota[x]);
+			System.out.println(matriculas[x]+"\t\t"+alunes[x]+"\t\t\t\t"+auxAtivo+"\t\t\t"+notaAlune);
 			}
 		}
 		
