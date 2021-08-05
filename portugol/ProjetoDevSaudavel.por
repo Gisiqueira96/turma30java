@@ -93,14 +93,13 @@ programa
 								escreva("\n\nDigite a quantidade desejada : ")
 								leia(auxQuant)
 							}
-							estoque[contador] -= auxQuant
 							pare						
 						}							
 					}
 					para (contador = 0; contador < 10; contador++){
 						se (auxCod == codProduto[contador]){
 							total += auxQuant * preco[contador]
-							carrinhoCompras[contador] += auxQuant
+							carrinhoCompras[contador] = auxQuant
 							tituloCarrinho()
 							para (contador = 0; contador < 10; contador++){
 								se(carrinhoCompras[contador] != 0){
@@ -196,7 +195,13 @@ programa
 				leia(zerarCarrinho)											
 				auxQuant=0					
 				contador=0
-				auxCod = " "				
+				para(inteiro x = 0; x < 10; x++){				
+					verificarRepeticao[x] = " "					
+				}
+					
+				para(inteiro x = 0; x < 10; x++){				
+					estoque[x] -= carrinhoCompras[x]						
+				}
 				para(inteiro x = 0; x < 10; x++){				
 					carrinhoCompras[x] = 0			
 					total = 0.0				
@@ -216,7 +221,7 @@ programa
 		
 
 		funcao insereBanner() {
-		escreva("www.devsaudavel.com.br || versão 1.3\n")
+		escreva("www.devsaudavel.com.br || versão 1.4\n")
 		escreva ("\t\t\t\t*****DEV SAUDÁVEL*****\n")
 		escreva ("\t\t\t\tProgramando a sua saúde\n")	
 		}	
@@ -244,7 +249,7 @@ programa
 		funcao linhaNota(logico forte){
 			se(forte){
 				escreva("======================================= Nota Fiscal =========================================\n")
-				escreva("\nwww.devsaudavel.com.br || versão 1.3\n")
+				escreva("\nwww.devsaudavel.com.br || versão 1.4\n")
 				escreva ("\t\t\t\t  *****DEV SAUDÁVEL*****\n")
 				escreva ("\t\t\t\t  Programando a sua saúde\n")
 				escreva ("\n\n♥    CÓDIGO\t♥\t PRODUTO\t♥    VALOR (R$)    ♥    QTDD    ♥     TOTAL (R$)    ♥\n")
@@ -259,9 +264,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 0; 
+ * @POSICAO-CURSOR = 8736; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {verificarRepeticao, 14, 10, 18}-{codProduto, 15, 10, 10}-{estoque, 18, 11, 7}-{carrinhoCompras, 19, 11, 15}-{auxCod, 22, 10, 6}-{auxQuant, 23, 11, 8};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
