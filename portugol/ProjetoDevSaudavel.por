@@ -35,7 +35,7 @@ programa
 			inteiro opcao = 0
 			logico brasilia = falso
 			caracter desejaVoltarParaSite
-			cadeia zerarCarrinho
+			cadeia zerarCarrinho 
 
 			
 			
@@ -286,7 +286,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10327; 
+ * @POSICAO-CURSOR = 355; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = {total, 34, 8, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
