@@ -62,20 +62,20 @@ programa
 										
 									}
 									linha(verdadeiro)
-								contador -= 1
-								
-								faca {
-								escreva("\nSelecione o código do produto : ")
+									escreva("\nSelecione o código do produto : ")
 									leia(auxCod)
-								
-								escreva("\n\nDigite a quantidade desejada : ")
-								leia(auxQuant)
-								}enquanto (auxCod == codProduto[contador])
-	
+									auxCod = txt.caixa_alta(auxCod)
+									contador = 0
+									enquanto(auxCod !=codProduto[contador]){
+										contador++
+									}
 							}senao{
-								
+								escreva("Escolha a nova quantidade do produto ",codProduto[contador]," que deseja")
 							}
 						}
+	
+							
+						
 
 						se(auxCod == codProduto[contador]){
 							verificarRepeticao[contador] = codProduto[contador]
@@ -152,8 +152,8 @@ programa
 						}
 						escreva("\n\nDinheiro à vista")
 						escreva("\n9% de ICMS : R$ ",mat.arredondar((total * 0.09),2))
-						escreva("\n10% de desconto : R$ ",mat.arredondar(((total + (total * 0.09))*0.1),2))
-						escreva("\n\nTOTAL DA COMPRA R$ ",mat.arredondar(((total * 0.9)*1.09),2),"\n")
+						escreva("\n10% de desconto : R$ ",mat.arredondar((total * 0.1),2))
+						escreva("\n\nTOTAL DA COMPRA R$ ",mat.arredondar((total * 0.9),2),"\n")
 						escreva("\n\t\t\t\t\t\tData de emissão : ",cal.dia_mes_atual(),"/",cal.mes_atual(),"/",cal.ano_atual())
 						escreva("    Hora : ", cal.hora_atual(brasilia),":",cal.minuto_atual(),":",cal.segundo_atual())
 						linhaNota(falso)
@@ -169,8 +169,8 @@ programa
 						}
 						escreva("\n\nCartão à vista")
 						escreva("\n9% de ICMS : R$ ",mat.arredondar((total * 0.09),2))
-						escreva("\n10% de acréscimo : R$ ",mat.arredondar(((total + (total * 0.09))*0.1),2))
-						escreva("\n\nTOTAL DA COMPRA R$ ",mat.arredondar(((total * 1.1)*1.09),2),"\n")
+						escreva("\n10% de acréscimo : R$ ",mat.arredondar((total * 0.1),2))
+						escreva("\n\nTOTAL DA COMPRA R$ ",mat.arredondar((total * 1.1),2),"\n")
 						escreva("\n\t\t\t\t\t\tData de emissão : ",cal.dia_mes_atual(),"/",cal.mes_atual(),"/",cal.ano_atual())
 						escreva("    Hora : ", cal.hora_atual(brasilia),":",cal.minuto_atual(),":",cal.segundo_atual())
 						linhaNota(falso)
@@ -183,9 +183,9 @@ programa
 						}
 						escreva("\n\n2x no Cartão")
 						escreva("\n9% de ICMS : R$ ",mat.arredondar((total * 0.09),2))
-						escreva("\n15% de acréscimo : R$ ",mat.arredondar(((total + (total * 0.09))*0.15),2))
-						escreva("\nValor da parcela : R$ ",mat.arredondar(((   (total + (total * 0.09))   +    (((total + (total * 0.09))*0.15))   )/2)  ,2))
-						escreva("\n\nTOTAL DA COMPRA R$ ",mat.arredondar((total + (total * 0.09))+((total + (total * 0.09))*0.15),2),"\n")
+						escreva("\n15% de acréscimo : R$ ",mat.arredondar((total * 0.15),2))
+						escreva("\nValor da parcela : R$ ",mat.arredondar((total * 1.15),2)/2,"\n")
+						escreva("\n\nTOTAL DA COMPRA R$ ",mat.arredondar((total * 1.15),2),"\n")
 						escreva("\n\t\t\t\t\t\tData de emissão : ",cal.dia_mes_atual(),"/",cal.mes_atual(),"/",cal.ano_atual())
 						escreva("    Hora : ", cal.hora_atual(brasilia),":",cal.minuto_atual(),":",cal.segundo_atual())
 						linhaNota(falso)
@@ -219,7 +219,7 @@ programa
 		
 
 		funcao insereBanner() {
-		escreva("www.devsaudavel.com.br || versão 1.5\n")
+		escreva("www.devsaudavel.com.br || versão 1.7\n")
 		escreva ("\t\t\t\t*****DEV SAUDÁVEL*****\n")
 		escreva ("\t\t\t\tProgramando a sua saúde\n")	
 		}	
@@ -251,7 +251,7 @@ programa
 		funcao linhaNota(logico forte){
 			se(forte){
 				escreva("======================================= NOTA FISCAL =========================================\n")
-				escreva("\nwww.devsaudavel.com.br || versão 1.5\n")
+				escreva("\nwww.devsaudavel.com.br || versão 1.7\n")
 				escreva ("\t\t\t\t  *****DEV SAUDÁVEL*****\n")
 				escreva ("\t\t\t\t  Programando a sua saúde\n")
 				escreva ("\n\n♥    CÓDIGO\t♥\t PRODUTO\t♥    VALOR (R$)    ♥    QTDD    ♥     TOTAL (R$)    ♥\n")
@@ -266,7 +266,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 10465; 
+ * @POSICAO-CURSOR = 10360; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
