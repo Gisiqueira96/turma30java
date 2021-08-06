@@ -99,12 +99,20 @@ programa
 								leia(auxQuant)
 							}
 							//Quantidade inexistente no estoque
-						se (auxQuant > estoque[contador]){
-								escreva ("Digite a quantidade mediante o estoque !")
-								escreva("\n\nDigite a quantidade desejada : ")
-								leia(auxQuant)
-						}
-							pare						
+						se(auxQuant > estoque[contador] e estoque[contador] == 0){
+                            		escreva ("Produto em falta no estoque, digite 0 para escolher outro produto! ")
+                            	enquanto (auxQuant > estoque[contador]){
+                            		leia(auxQuant)
+                            	}
+                        		}
+                        		senao se (auxQuant > estoque[contador]){
+                        			enquanto (auxQuant > estoque[contador]){
+                        				escreva ("\nDigite a quantidade mediante o estoque !")
+                        				escreva("\n\nDigite a quantidade desejada : ")
+                        				leia(auxQuant)
+                        			}
+                        		}
+                        				pare						
 						}							
 					}
 					//Carrinho durante a compra
@@ -112,6 +120,7 @@ programa
 						se (auxCod == codProduto[contador]){
 							carrinhoCompras[contador] = auxQuant
 							tituloCarrinho()
+							
 							para (contador = 0; contador < 10; contador++){
 								se(carrinhoCompras[contador] != 0){
 									escreva ("♥     ",codProduto[contador]," \t♥\t",produto[contador],"\t♥\t",preco[contador],"\t   ♥\t  ",carrinhoCompras[contador],"\t♥\t",carrinhoCompras[contador] * preco[contador],"\t    ♥\n")
@@ -140,7 +149,7 @@ programa
 					para (contador = 0; contador < 10; contador++){
 						se(carrinhoCompras[contador] != 0){
 							escreva ("♥     ",codProduto[contador]," \t♥\t",produto[contador],"\t♥\t",preco[contador],"\t   ♥\t  ",carrinhoCompras[contador],"\t♥\t",carrinhoCompras[contador] * preco[contador],"\t    ♥\n")						
-						total += auxQuant * preco[contador]
+						total += carrinhoCompras[contador] * preco[contador]
 						}
 					}
 					linha(falso)
@@ -232,7 +241,7 @@ programa
 		
 		//Cabeçalho do site
 		funcao insereBanner() {
-		escreva("www.devsaudavel.com.br || versão 1.7\n")
+		escreva("www.devsaudavel.com.br || versão 2.0\n")
 		escreva ("\t\t\t\t*****DEV SAUDÁVEL*****\n")
 		escreva ("\t\t\t\tProgramando a sua saúde\n")	
 		}	
@@ -262,7 +271,7 @@ programa
 		funcao linhaNota(logico forte){
 			se(forte){
 				escreva("======================================= NOTA FISCAL =========================================\n")
-				escreva("\nwww.devsaudavel.com.br || versão 1.7\n")
+				escreva("\nwww.devsaudavel.com.br || versão 2.0\n")
 				escreva ("\t\t\t\t  *****DEV SAUDÁVEL*****\n")
 				escreva ("\t\t\t\t  Programando a sua saúde\n")
 				escreva ("\n\n♥    CÓDIGO\t♥\t PRODUTO\t♥    VALOR (R$)    ♥    QTDD    ♥     TOTAL (R$)    ♥\n")
@@ -277,9 +286,9 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 5464; 
+ * @POSICAO-CURSOR = 10327; 
  * @PONTOS-DE-PARADA = ;
- * @SIMBOLOS-INSPECIONADOS = ;
+ * @SIMBOLOS-INSPECIONADOS = {total, 34, 8, 5};
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
  * @FILTRO-ARVORE-TIPOS-DE-SIMBOLO = variavel, vetor, matriz, funcao;
  */
