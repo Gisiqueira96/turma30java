@@ -33,7 +33,6 @@ public class CadAluno {
 		boolean ativo [] = new boolean [alunes.length];  //true
 		char op = ' ';
 		String matriculaAlune;
-		int notaAlune;
 		char auxAtivo = ' ';
 		
 		
@@ -55,36 +54,47 @@ public class CadAluno {
 			}
 		}
 			
+		
+		
 		do {
 			//matricula do alune e imprima
-			System.out.println();
-			System.out.print("Digite a matricula do alune: ");
+			System.out.print("\nDigite a matricula do alune: ");
 			matriculaAlune = ler.next().toUpperCase();
-			//informar nota do alune
-			System.out.print("Informe a nota do alune: ");
-			notaAlune = ler.nextInt();
-			//informar se alune esta ativo ou inativo
-			System.out.print("Statud do alune (S-Ativo ou N-Inativo): ");
-			auxAtivo = ler.next().toUpperCase().charAt(0);
-			if (auxAtivo == 'S') {
-				System.out.println("Status atualizado para ATIVO!");
-			}else if (auxAtivo == 'N'){
-				System.out.println("Status atualizado para INATIVO!");
-			}else {
-				System.out.println("Status inválido, digite S-Ativo ou N-Inativo");
+			
+			for (int x=0 ; x<alunes.length ; x++) {
+				if (matriculaAlune.equals(matriculas[x])) {
+					System.out.print("Matricula: "+matriculas[x]+" Alunes: "+alunes[x]);
+					//informar nota do alune
+					System.out.print("\nInforme a nota do alune: ");
+					nota[x] = ler.nextInt();
+					//informar se alune esta ativo ou inativo
+					System.out.print("Status do alune (1-Ativo ou 2-Inativo): ");
+					auxAtivo = ler.next().toUpperCase().charAt(0);
+					if (auxAtivo == '1') {
+						ativo[x] = true;
+						System.out.println("Status atualizado para ATIVO!");
+					}else if (auxAtivo == '2'){
+						ativo[x] = false;
+						System.out.println("Status atualizado para INATIVO!");
+					}else {
+						System.out.println("Status inválido!!!");
+					}
+				}
 			}
 			System.out.print("Deseja continuar adicionando as notas S/N: ");
 			op = ler.next().toUpperCase().charAt(0);
 		}while (op == 'S');
+		
 		// notas atualizadas
-		System.out.println("---MOSTRAR NOTAS---");
 		for (int x=0 ; x<alunes.length ; x++) {
-			if (nota != null) {
-			System.out.println(matriculas[x]+"\t\t"+alunes[x]+"\t\t\t\t"+auxAtivo+"\t\t\t"+notaAlune);
+			if (nota[x] > 0 && ativo[x] == true) {
+				System.out.printf("Matricula: "+matriculas[x]+" Alunes: "+alunes[x]+ "Notas: "+nota[x]+" Status: "+ativo[x]);
+					if (nota[x] > 5) {
+						System.out.println(" Obs: Parabéns! Continue assim! =D");
+					} else {
+						System.out.println(" Obs: Precisa estudar mais! =(");
+					}
 			}
 		}
-		
-		
 	}
-
 }
