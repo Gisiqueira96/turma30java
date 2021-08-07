@@ -1,5 +1,8 @@
 package introducao;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class TesteEquals {
 
 	public static void main(String[] args) {
@@ -15,7 +18,6 @@ public class TesteEquals {
 		if (nome.equals(teste[1])) {
 			System.out.println("O nome está certo!!");
 		}
-
 	}
 
 }
