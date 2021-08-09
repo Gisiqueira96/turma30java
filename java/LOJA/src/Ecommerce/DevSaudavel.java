@@ -1,12 +1,11 @@
 package Ecommerce;
 
-
 	import java.time.LocalDateTime;
 	import java.time.format.DateTimeFormatter;
 	import java.util.Scanner;
 	import java.text.DecimalFormat;
 
-	public class DevSaudavelProj {
+	public class DevSaudavel {
 			/*
 			 * Projeto Ecommerce, loja de produtos saudáveis.
 			 * Programado por:
@@ -48,8 +47,10 @@ package Ecommerce;
 			//Entrada para o site
 			do{
 				insereBanner(); //Maic
-				System.out.print("\nDeseja entrar no site [S/N] ? : ");
-				desejaEntraNoSite = ler.next().toUpperCase().charAt(0);
+				do{
+					System.out.print("\nDeseja entrar no site [S/N] ? : ");
+					desejaEntraNoSite = ler.next().toUpperCase().charAt(0);
+				}while(desejaEntraNoSite != 'S' && desejaEntraNoSite != 'N');
 				//Tabela de código, produtos, preços e estoque
 				if(desejaEntraNoSite == 'S' || desejaEntraNoSite == 's'){
 					tituloTabela(); //Maic
@@ -128,8 +129,11 @@ package Ecommerce;
 					 				}
 					 			}
 						 		//Após adicionar o produto no carrinho, é perguntado novamente
-						 		System.out.print("\nDeseja continuar a compra [S/N] ?: ");
-						 		continua = ler.next().toUpperCase().charAt(0);
+						 		do{
+						 			System.out.print("\nDeseja continuar a compra [S/N] ?: ");
+						 			continua = ler.next().toUpperCase().charAt(0);
+						 		}while(continua != 'S' && continua != 'N');
+						 		
 						 		tituloTabela(); //Maic
 						 		for (contador = 0 ; contador < 10 ; contador++) {
 						 			if (continua == 'S') {
@@ -227,8 +231,10 @@ package Ecommerce;
 				else {
 					break;
 				}
-				System.out.print("\nDeseja retornar ao site [S/N]: ");
-				desejaVoltarParaSite = ler.next().toUpperCase().charAt(0);	
+				do{
+					System.out.print("\nDeseja continuar a compra [S/N] ?: ");
+					desejaVoltarParaSite = ler.next().toUpperCase().charAt(0);	
+		 		}while(continua != 'S' && continua != 'N');
 			}while (desejaVoltarParaSite == 'S');
 			System.out.println("Agradecemos a visita ♥\nVolte Sempre !!!\n");
 		}//void main
