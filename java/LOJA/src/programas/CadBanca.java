@@ -48,5 +48,4 @@ public class CadBanca {
 		book1.retiraEstoque(quantidade);
 		
 	}
-
 }
