@@ -7,10 +7,11 @@ public class TesteFuncionario {
 
 	public static void main(String[] args) {
 		
-		Terceiro f1 = new Terceiro ("001" , 80 , 30.0 , 0.0);
-		Funcionario f2 = new Funcionario ("002" , 80 , 30.0);
+		Terceiro f1 = new Terceiro ("999",8,88.5,150.40);
+		Funcionario f2 = new Funcionario ("222",8,88.5);
 		
-		System.out.println("SALARIO: " + f2.salario());
+		System.out.println("SALARIO: " + f1.calcSalario());
+		System.out.println("SALARIO: " + f2.calcSalario());
 		
 	}
 }

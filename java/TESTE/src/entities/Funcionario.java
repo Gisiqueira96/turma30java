@@ -3,7 +3,7 @@ package entities;
 public class Funcionario {
 	
 	private String matricula;
-	private int horasTrabalhadas;
+	private double horasTrabalhadas;
 	private double valorPorHora;
 	
 	//Construtor
@@ -23,7 +23,7 @@ public class Funcionario {
 		this.matricula = matricula;
 	}
 
-	public int getHorasTrabalhadas() {
+	public double getHorasTrabalhadas() {
 		return horasTrabalhadas;
 	}
 
@@ -40,7 +40,9 @@ public class Funcionario {
 	}
 
 	//Método
-	public double salario() {
-		return horasTrabalhadas *  valorPorHora;
+	public double calcSalario() {
+		this.horasTrabalhadas = horasTrabalhadas;
+		this.valorPorHora = valorPorHora;
+		return horasTrabalhadas * valorPorHora;
 	}
 }

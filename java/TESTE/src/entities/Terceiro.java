@@ -21,7 +21,7 @@ public class Terceiro extends Funcionario {
 	
 	//Método
 	@Override
-	public double salario() {
-		return ((super.getValorPorHora() * super.getValorPorHora()) + adicional);
+	public double calcSalario() {
+		return (super.getHorasTrabalhadas() * super.getValorPorHora()) + adicional;
 	}
 }
