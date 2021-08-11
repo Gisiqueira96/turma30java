@@ -1,25 +1,33 @@
 package entities;
 
 public class Funcionario {
-	
-	//Atributos
+
+	// Atributos
 	private String matricula;
-	protected int horasTrabalhadas; //protected libera para os filhos
+	protected int horasTrabalhadas; // protected libera para os filhos
 	protected double valorPorHora;
-	
-	//Construtor
+
+	// Construtor
 	public Funcionario(String matricula, int horasTrabalhadas, double valorPorHora) {
 		super();
 		this.matricula = matricula;
-		this.horasTrabalhadas = horasTrabalhadas;
-		this.valorPorHora = valorPorHora;
+		if (horasTrabalhadas < 0) {
+			this.horasTrabalhadas = 0;
+		} else {
+			this.horasTrabalhadas = horasTrabalhadas;
+		}
+		if (valorPorHora < 0) {
+			this.valorPorHora = 0;
+		} else {
+			this.valorPorHora = valorPorHora;
+		}
 	}
-	
-	//Encapsulamento
+
+	// Encapsulamento
 	public String getMatricula() {
 		return matricula;
 	}
-	
+
 	public void setMatricula(String matricula) {
 		this.matricula = matricula;
 	}
@@ -40,7 +48,7 @@ public class Funcionario {
 		this.valorPorHora = valorPorHora;
 	}
 
-	//Método
+	// Método
 	public double calcSalario() {
 		return horasTrabalhadas * valorPorHora;
 	}
