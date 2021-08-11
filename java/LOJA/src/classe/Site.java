@@ -6,8 +6,6 @@ public class Site {
 	private String produto;
 	private double preco;
 	private int estoque;
-	private char desejaEntraNoSite;
-	private char desejaVoltarParaSite;
 	
 	//============================ CONSTRUTORES ================================
 	
