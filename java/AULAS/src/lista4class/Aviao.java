@@ -1,4 +1,4 @@
-package lista4;
+package lista4class;
 
 public class Aviao {
 

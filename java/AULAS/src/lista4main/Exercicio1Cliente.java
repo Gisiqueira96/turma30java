@@ -4,9 +4,11 @@
  *   objeto e apresente as informações deste objeto no console.
  */
 
-package lista4;
+package lista4main;
 
 import java.util.Scanner;
+
+import lista4class.Cliente;
 
 public class Exercicio1Cliente {
 

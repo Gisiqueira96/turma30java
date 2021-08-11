@@ -1,6 +1,8 @@
-package lista4;
+package lista4main;
 
 import java.util.Scanner;
+
+import lista4class.Aviao;
 
 public class Exercicio2Aviao {
 

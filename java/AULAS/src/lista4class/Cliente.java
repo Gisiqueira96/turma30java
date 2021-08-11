@@ -4,7 +4,7 @@
  *   objeto e apresente as informações deste objeto no console.
  */
 
-package lista4;
+package lista4class;
 
 public class Cliente {
 
