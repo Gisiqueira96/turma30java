@@ -2,9 +2,10 @@ package entities;
 
 public class Funcionario {
 	
+	//Atributos
 	private String matricula;
-	private double horasTrabalhadas;
-	private double valorPorHora;
+	protected int horasTrabalhadas; //protected libera para os filhos
+	protected double valorPorHora;
 	
 	//Construtor
 	public Funcionario(String matricula, int horasTrabalhadas, double valorPorHora) {
@@ -23,7 +24,7 @@ public class Funcionario {
 		this.matricula = matricula;
 	}
 
-	public double getHorasTrabalhadas() {
+	public int getHorasTrabalhadas() {
 		return horasTrabalhadas;
 	}
 
@@ -41,8 +42,6 @@ public class Funcionario {
 
 	//Método
 	public double calcSalario() {
-		this.horasTrabalhadas = horasTrabalhadas;
-		this.valorPorHora = valorPorHora;
 		return horasTrabalhadas * valorPorHora;
 	}
 }

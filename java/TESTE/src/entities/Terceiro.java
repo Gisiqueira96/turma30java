@@ -1,7 +1,8 @@
 package entities;
 
 public class Terceiro extends Funcionario {
-
+	
+	//Atributos
 	private double adicional;
 
 	//Construtor
@@ -19,9 +20,13 @@ public class Terceiro extends Funcionario {
 		this.adicional = adicional;
 	}
 	
-	//Método
-	@Override
+	//Método annotation
+	@Override //no protected voce consegue mexer
+	public double calcSalario() {
+		return horasTrabalhadas * valorPorHora+adicional;
+	}
+	/*@Override [no super apenas leva]
 	public double calcSalario() {
 		return (super.getHorasTrabalhadas() * super.getValorPorHora()) + adicional;
-	}
+	}*/
 }
