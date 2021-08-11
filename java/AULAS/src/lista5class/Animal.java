@@ -1,8 +1,7 @@
-package clases;
+package lista5class;
 
 public class Animal {
 
-	
 	private String nome;
 	private int idade;
 	private boolean emiteSom;
@@ -54,6 +53,4 @@ public class Animal {
 	public void setEmiteSom(boolean emiteSom) {
 		this.emiteSom = emiteSom;
 	}
-	
-	
 }

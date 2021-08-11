@@ -1,4 +1,4 @@
-package clases;
+package lista5class;
 
 public class Cachorro extends Cavalo {
 
@@ -7,3 +7,4 @@ public class Cachorro extends Cavalo {
 		
 	}
 }
+
