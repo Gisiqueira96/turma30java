@@ -18,5 +18,8 @@ package lista5class;
 			this.corre = corre;
 		}
 		
-		
+		@Override
+		public void emiteSom() {
+			System.out.println("IIIIrrríiiii, rilinchin");
+		}
 	}

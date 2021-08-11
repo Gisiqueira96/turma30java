@@ -6,5 +6,9 @@ public class Cachorro extends Cavalo {
 		super(nome, idade, emiteSom, corre);
 		
 	}
+	@Override
+	public void emiteSom() {
+		System.out.println("Au Au Au Au Au Au");
+	}
 }
 

@@ -8,7 +8,7 @@ public class Preguica extends Animal {
 		super(nome, idade, emiteSom);
 		this.sobeArvore = sobeArvore;
 	}
-	
+
 	public boolean isSobeArvore() {
 		return sobeArvore;
 	}
@@ -17,4 +17,8 @@ public class Preguica extends Animal {
 		this.sobeArvore = sobeArvore;
 	}
 
+	@Override
+	public void emiteSom() {
+		System.out.println("ZZZZZZZZ");
+	}
 }
