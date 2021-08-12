@@ -33,7 +33,7 @@ public class Teste extends Funcoes {
 		
 		
 			System.out.print("\nDigite o código do produto : ");
-			auxCod = ler.nextLine().toUpperCase();
+			auxCod = ler.nextLi().toUpperCase();
 		
 			for(contador = 0;contador < lista.size();contador++) {
 				if(lista.get(contador).getCodProduto().equals(auxCod)) {
