@@ -19,8 +19,7 @@ public class Funcoes {
 			insereBanner ();
 			return true;
 		} else {
-			System.out.print("\"Obrigado pela visita!!\n");
-			System.exit(0);
+			System.out.print("Obrigado pela visita!!\n");
 			return false;
 		}	
 		
@@ -47,8 +46,8 @@ public class Funcoes {
 				for (Produto item : lista) {
 					System.out.println(item.getCodProduto()+"\t"+item.getPreco()+"\t\t"+item.getEstoque()+"\t\t"+item.getProduto()+((item.getEstoque()>0)?" ":"\tPRODUTO INDISPONIVEL"));
 				}
-				System.out.println("CARRINHO DE COMPRAS");
-				System.out.println("COD\tVALOR\tESTOQUE\tPRODUTO");
+				System.out.println("\nCarrinho de compras");
+				System.out.println("COD\tVALOR\tESTOQUE\tPRODUTO\n");
 				for (Produto escolhido : carrinho) {
 					System.out.println(escolhido.getCodProduto()+"\t"+escolhido.getPreco()+"\t"+escolhido.getEstoque()+"\t"+escolhido.getProduto());
 				}
@@ -66,10 +65,10 @@ public class Funcoes {
 				}
 			
 				if (pos>=0) {
-					System.out.println("Produto escolhido: ");
-					System.out.println("COD\tVALOR\tESTOQUE\tPRODUTO");
+					System.out.println("Produto escolhido: \n");
+					System.out.println("\nCOD\tVALOR\tESTOQUE\tPRODUTO");
 					System.out.printf("%s\t%.2f\t%d\t%s\n",lista.get(pos).getCodProduto(),lista.get(pos).getPreco(),lista.get(pos).getEstoque(),lista.get(pos).getProduto());
-					System.out.println("Quantidade do Produto: ");
+					System.out.print("\nQuantidade do Produto: ");
 					int auxQtde = ler.nextInt();
 					if (auxQtde< 0) {
 						System.out.println("Impossivel realizar, valor negativo!!!");
@@ -89,11 +88,11 @@ public class Funcoes {
 				else {
 					System.out.println("Codigo informado não existe!!!");
 				}
-				System.out.println("Continua SIM/NAO [S/N] :");
+				System.out.print("Continua SIM/NAO [S/N] :");
 				op = ler.next().toUpperCase().charAt(0);
 
 			} while (op=='S');
-			System.out.println("FECHAMENTO DA COMPRA");
+			System.out.println("Fechamento da Compra");
 			System.out.println("COD\tVALOR\tESTOQUE\tPRODUTO");
 			double auxTotal=0;
 			for (Produto escolhido : carrinho) {
@@ -113,12 +112,12 @@ public class Funcoes {
 			carrinho.clear();
 			
 			
-			System.out.print("TABELA ATUALIZA:\n\r");
+			System.out.print("Tabela Atualizada:\n\r");
 			insereBanner();
 			for (Produto item : lista) {		
 				System.out.println(item.getCodProduto()+"\t"+item.getPreco()+"\t\t"+item.getEstoque()+"\t\t"+item.getProduto());
 			}
-			System.out.println("ATÉ BREVE!!!");
+			System.out.println("Obrigado pela visita!!\n");
 		}
 	}
 
