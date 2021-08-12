@@ -1,15 +1,18 @@
-package classe;
+package DevSaudavel;
 
-public class Site {
+import java.util.List;
+import java.util.Scanner;
 
-	private String codProduto;
-	private String produto;
-	private double preco;
-	private int estoque;
+public class Produto {
+	//========================ATRIBUTOS=========================
+	protected String codProduto;
+	protected String produto;
+	protected double preco;
+	protected int estoque;
 	
 	//============================ CONSTRUTORES ================================
 	
-	public Site(String codProduto, String produto, double preco, int estoque) {
+	public Produto (String codProduto, String produto, double preco, int estoque) {		
 		super();
 		this.codProduto = codProduto;
 		this.produto = produto;
@@ -55,7 +58,7 @@ public class Site {
 	public void setEstoque(int estoque) {
 		this.estoque = estoque;
 	}
-	//============================ OS MÉTODOS COMEÇAM A PARTIR DAQUI ================================
+	//============================ MÉTODOS ESTOQUE ================================
 	
 	public void incluiEstoque(int quantidade) {
         if (quantidade <= 0) {
@@ -73,5 +76,6 @@ public class Site {
             this.estoque = this.estoque - quantidade;
         }
     }
-}
+    
 
+}
