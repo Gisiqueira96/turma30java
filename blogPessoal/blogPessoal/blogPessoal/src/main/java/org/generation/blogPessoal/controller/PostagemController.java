@@ -3,6 +3,7 @@ package org.generation.blogPessoal.controller;
 
 import java.util.List;
 
+
 import org.generation.blogPessoal.model.Postagem;
 import org.generation.blogPessoal.repository.PostagemRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,10 +19,10 @@ import org.springframework.web.bind.annotation.RestController;
 public class PostagemController {
 
 	@Autowired
-	private PostagemRepository repositoty;
+	private PostagemRepository repository;
 	
 	@GetMapping
 	public ResponseEntity<List<Postagem>> GetAll() {
-		return ResponseEntity.ok(repositoty.findAll());
+		return ResponseEntity.ok(repository.findAll());
 	}
 }
