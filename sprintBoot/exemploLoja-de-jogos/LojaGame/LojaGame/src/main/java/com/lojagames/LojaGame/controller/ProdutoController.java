@@ -19,43 +19,41 @@ import com.lojagames.LojaGame.model.Produto;
 import com.lojagames.LojaGame.repository.ProdutoRepository;
 
 @RestController
-@RequestMapping ("/produto")
+@RequestMapping("/produto")
 @CrossOrigin(origins = "*", allowedHeaders = "*")
 public class ProdutoController {
-	
+
 	@Autowired
 	private ProdutoRepository repository;
-	
+
 	@GetMapping
-	public ResponseEntity<List<Produto>> getAll (){
+	public ResponseEntity<List<Produto>> getAll() {
 		return ResponseEntity.ok(repository.findAll());
 	}
-	
-	@GetMapping ("/{id}")
-	public ResponseEntity<Produto> getById (@PathVariable long id) {
-		return repository.findById(id)
-				.map(resp -> ResponseEntity.ok(resp))
-				.orElse(ResponseEntity.notFound().build());
+
+	@GetMapping("/{id}")
+	public ResponseEntity<Produto> getById(@PathVariable long id) {
+		return repository.findById(id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 	}
-	
-	@GetMapping ("/titulo/{titulo}")
-	public ResponseEntity<List<Produto>> getByTitulo (@PathVariable String titulo){
-		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));	
+
+	@GetMapping("/titulo/{titulo}")
+	public ResponseEntity<List<Produto>> getByTitulo(@PathVariable String titulo) {
+		return ResponseEntity.ok(repository.findAllByTituloContainingIgnoreCase(titulo));
 	}
-	
+
 	@PostMapping
-	public ResponseEntity<Produto> post (@RequestBody Produto produto ){
+	public ResponseEntity<Produto> post(@RequestBody Produto produto) {
 		return ResponseEntity.status(HttpStatus.CREATED).body(repository.save(produto));
 	}
-	
+
 	@PutMapping
-	public ResponseEntity<Produto> put (@RequestBody Produto produto){
+	public ResponseEntity<Produto> put(@RequestBody Produto produto) {
 		return ResponseEntity.status(HttpStatus.OK).body(repository.save(produto));
 	}
 
-	@DeleteMapping ("/{id}")
-	public void delete (@PathVariable long id) {
+	@DeleteMapping("/{id}")
+	public void delete(@PathVariable long id) {
 		repository.deleteById(id);
 	}
-	
+
 }

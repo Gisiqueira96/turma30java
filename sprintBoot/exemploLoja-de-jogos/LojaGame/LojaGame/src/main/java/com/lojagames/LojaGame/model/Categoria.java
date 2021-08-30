@@ -11,12 +11,10 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
-
-
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
-@Table (name = "tb_Categoria")
+@Table(name = "tb_Categoria")
 
 public class Categoria {
 
@@ -26,9 +24,9 @@ public class Categoria {
 
 	@NotBlank
 	private String genero;
-	
+
 	@OneToMany(mappedBy = "categoria", cascade = CascadeType.ALL)
-	@JsonIgnoreProperties ("categoria")
+	@JsonIgnoreProperties("categoria")
 	private List<Produto> produto;
 
 	public long getId() {
@@ -54,6 +52,5 @@ public class Categoria {
 	public void setProduto(List<Produto> produto) {
 		this.produto = produto;
 	}
-	
-	
+
 }
